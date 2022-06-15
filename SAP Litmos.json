@@ -121,7 +121,7 @@
             },
             "teams_users": {
                 "operations": {
-                    "teams_get": {
+                    "teams_users_get": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -145,6 +145,138 @@
                     "Id": "string*",
                     "AccessLevel": "string*",
                     "Brand": "string*"
+                }
+            },
+            "teams_leaders": {
+                "operations": {
+                    "teams_leaders_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "teams",
+                            "iterator": "Id",
+                            "path": "/v1.svc/teams/{iterator}/leaders",
+                            "base": {
+                                "team_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "team_id":"string*",
+                    "Id": "string*"
+                }
+            },
+            "teams_admins": {
+                "operations": {
+                    "teams_admins_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "teams",
+                            "iterator": "Id",
+                            "path": "/v1.svc/teams/{iterator}/admins",
+                            "base": {
+                                "team_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "team_id":"string*",
+                    "Id": "string*"
+                }
+            },
+            "teams_teams": {
+                "operations": {
+                    "teams_teams_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "teams",
+                            "iterator": "Id",
+                            "path": "/v1.svc/teams/{iterator}/teams",
+                            "base": {
+                                "team_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "team_id":"string*",
+                    "Id": "string*"
+                }
+            },
+            "teams_courses": {
+                "operations": {
+                    "teams_courses_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "teams",
+                            "iterator": "Id",
+                            "path": "/v1.svc/teams/{iterator}/courses",
+                            "base": {
+                                "team_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "team_id":"string*",
+                    "Id": "string*"
+                }
+            },
+            "users_customfields": {
+                "operations": {
+                    "users_customfields_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "Id",
+                            "path": "/v1.svc/users/{iterator}/usercustomfields",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 2
+                    }
+                },
+                "parameters": {},
+                "key": "user_Id",
+                "resources": {
+                    "user_id":"string*",
+                    "fieldname": "string*",
+                    "value": "string*"
                 }
             }
         }
