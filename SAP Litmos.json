@@ -1,0 +1,185 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "users": {
+                "operations": {
+                    "users_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/users/paginated"
+                        },
+                        "processing_options": {
+                            "output_field": "Items"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "Id": "string*",
+                    "UserName": "string*",
+                    "FirstName": "string*",
+                    "LastName": "string*",
+                    "Active": "string*",
+                    "Email": "string*",
+                    "AccessLevel": "string*",
+                    "Brand": "string*"
+                }
+            },
+            "achievements": {
+                "operations": {
+                    "achievements_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/achievements"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "AchievementId",
+                "resources": {
+                    "UserId": "string*",
+                    "Title": "string*",
+                    "Description": "string*",
+                    "AchievementDate": "string*",
+                    "CourseId": "string*",
+                    "CompliantTillDate": "string*",
+                    "Score": "string*",
+                    "Result": "string*",
+                    "Type": "string*",
+                    "FirstName": "string*",
+                    "LastName": "string*",
+                    "AchievementId": "number*",
+                    "CertificateId": "string*"
+                }
+            },
+            "courses": {
+                "operations": {
+                    "courses_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/courses"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "Id": "string*",
+                    "Code": "string*",
+                    "Name": "string*",
+                    "Active": "boolean*",
+                    "ForSale": "boolean*",
+                    "OriginalId": "number*",
+                    "Description": "string*",
+                    "EcommerceShortDescription": "string*",
+                    "EcommerceLongDescription": "string*",
+                    "CourseCodeForBulkImport": "string*",
+                    "Price": "string*",
+                    "AccessTillDate": "string*",
+                    "AccessTillDays": "string*",
+                    "CourseTeamLibrary": "boolean*",
+                    "CreatedBy": "string*",
+                    "SeqId": "string*"
+                }
+            },
+            "teams": {
+                "operations": {
+                    "teams_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "Id": "string*",
+                    "Name": "string*",
+                    "TeamCodeForBulkImport": "string*",
+                    "ParentTeamId": "string*"
+                }
+            },
+            "teams_users": {
+                "operations": {
+                    "teams_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "teams",
+                            "iterator": "Id",
+                            "path": "/v1.svc/teams/{iterator}/users",
+                            "base": {
+                                "team_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "Id",
+                "resources": {
+                    "team_id":"string*",
+                    "Id": "string*",
+                    "AccessLevel": "string*",
+                    "Brand": "string*"
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "{tenant_id}",
+            "get": {
+                "maxPageCount": 5,
+                "query_parameters": {
+                    "source": "NIM",
+                    "format": "json"
+                },
+                "pagination": {
+                    "mode": "skip_take",
+                    "path":[],
+                    "page_size":"1000",
+                    "params":{
+                        "limit":"{take_count}",
+                        "start":"{skip_count}"
+                    }
+                }
+            },
+            "authentication": "aeries",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "/v1.svc/users/paginated?limit=1&start=0"
+            },
+            "accept": "application/json",
+            "headers": {
+                "apikey": "{client_secret}"
+            }
+        }
+    },
+    "connection": {
+        "items": []
+    }
+}
