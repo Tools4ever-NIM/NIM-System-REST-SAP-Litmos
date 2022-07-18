@@ -459,7 +459,7 @@
             },
             "teams_leaders": {
                 "operations": {
-                    "teams_leaders_get": {
+                    "teams_leadersLists": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -474,6 +474,37 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "teams_leadersAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/leaders"
+                        },
+                        "body":{
+                            "User": {
+                                "Id": "{Id}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
+                    },
+                    "teams_leadersRemove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/leaders/{Id}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -485,7 +516,7 @@
             },
             "teams_admins": {
                 "operations": {
-                    "teams_admins_get": {
+                    "teams_adminsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -500,6 +531,37 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "teams_adminsAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/admins"
+                        },
+                        "body":{
+                            "User": {
+                                "Id": "{Id}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
+                    },
+                    "teams_adminsRemove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/admins/{Id}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -511,7 +573,7 @@
             },
             "teams_teams": {
                 "operations": {
-                    "teams_teams_get": {
+                    "teams_teamsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -552,6 +614,37 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "teams_coursesAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/courses"
+                        },
+                        "body":{
+                            "User": {
+                                "Id": "{Id}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
+                    },
+                    "teams_coursesRemove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/courses/{Id}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
                     }
                 },
                 "parameters": {},
