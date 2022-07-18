@@ -4,7 +4,7 @@
         "crud_objects": {
             "users": {
                 "operations": {
-                    "users_get": {
+                    "usersList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -14,6 +14,173 @@
                             "output_field": "Items"
                         },
                         "query_parameters": {}
+                    },
+                    "usersCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users"
+                        },
+                        "query_parameters": {
+                            "sendmessage":"{SendMessage}",
+                            "skipfirstlogin":"{SkipFirstLogin}"
+                        },
+                        "body":{
+                            "user": {
+                                "UserName": "{UserName}",
+                                "FirstName": "{FirstName}",
+                                "LastName": "{LastName}",
+                                "Active": "{Active}",
+                                "Email": "{Email}",
+                                "AccessLevel": "{AccessLevel}",
+                                "Brand": "{Brand}",
+                                "DisableMessages": "{DisableMessages}",
+                                "Skype": "{Skype}",
+                                "PhoneWork": "{PhoneWork}",
+                                "PhoneMobile": "{PhoneMobile}",
+                                "IsCustomUsername": "{IsCustomUsername}",
+                                "Password": "{Password}",
+                                "SkipFirstLogin": "{SkipFirstLogin}",
+                                "TimeZone": "{TimeZone}",
+                                "SalesforceId": "{SalesforceId}",
+                                "Street1": "{Street1}",
+                                "Street2": "{Street2}",
+                                "City": "{City}",
+                                "State": "{State}",
+                                "PostalCode": "{PostalCode}",
+                                "Country": "{Country}",
+                                "SalesforceContactId": "{SalesforceContactId}",
+                                "SalesforceAccountId": "{SalesforceAccountId}",
+                                "Points": "{Points}",
+                                "CompanyName": "{CompanyName}",
+                                "JobTitle": "{JobTitle}",
+                                "CustomField1": "{CustomField1}",
+                                "CustomField2": "{CustomField2}",
+                                "CustomField3": "{CustomField3}",
+                                "CustomField4": "{CustomField4}",
+                                "CustomField5": "{CustomField5}",
+                                "CustomField6": "{CustomField6}",
+                                "CustomField7": "{CustomField7}",
+                                "CustomField8": "{CustomField8}",
+                                "CustomField9": "{CustomField9}",
+                                "CustomField10": "{CustomField10}",
+                                "Culture": "{Culture}",
+                                "ManagerId": "{ManagerId}",
+                                "ManagerName": "{ManagerName}",
+                                "EnableTextNotification": "{EnableTextNotification}",
+                                "Website": "{Website}",
+                                "Twitter": "{Twitter}",
+                                "ExpirationDate": "{ExpirationDate}",
+                                "JobRole": "{JobRole}",
+                                "ExternalEmployeeId": "{ExternalEmployeeId}",
+                                "ProfileType": "{ProfileType}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "Id",
+                            "LastLogin",
+                            "LoginKey",
+                            "OriginalId",
+                            "CreatedDate"
+                        ],
+                        "resource_mandatory": [
+                            "UserName",
+                            "FirstName",
+                            "LastName",
+                            "Email",
+                            "AccessLevel",
+                            "DisableMessages",
+                            "Active",
+                            "IsCustomUsername",
+                            "SkipFirstLogin",
+                            "TimeZone"
+                        ]
+                    },
+                    "usersUpdate": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{Id}"
+                        },
+                        "query_parameters": {
+                        },
+                        "body":{
+                            "user": {
+                                "Id": "{Id}",
+                                "UserName": "{UserName}",
+                                "FirstName": "{FirstName}",
+                                "LastName": "{LastName}",
+                                "Active": "{Active}",
+                                "Email": "{Email}",
+                                "AccessLevel": "{AccessLevel}",
+                                "Brand": "{Brand}",
+                                "DisableMessages": "{DisableMessages}",
+                                "Skype": "{Skype}",
+                                "PhoneWork": "{PhoneWork}",
+                                "PhoneMobile": "{PhoneMobile}",
+                                "IsCustomUsername": "{IsCustomUsername}",
+                                "Password": "{Password}",
+                                "SkipFirstLogin": "{SkipFirstLogin}",
+                                "TimeZone": "{TimeZone}",
+                                "SalesforceId": "{SalesforceId}",
+                                "Street1": "{Street1}",
+                                "Street2": "{Street2}",
+                                "City": "{City}",
+                                "State": "{State}",
+                                "PostalCode": "{PostalCode}",
+                                "Country": "{Country}",
+                                "SalesforceContactId": "{SalesforceContactId}",
+                                "SalesforceAccountId": "{SalesforceAccountId}",
+                                "Points": "{Points}",
+                                "CompanyName": "{CompanyName}",
+                                "JobTitle": "{JobTitle}",
+                                "CustomField1": "{CustomField1}",
+                                "CustomField2": "{CustomField2}",
+                                "CustomField3": "{CustomField3}",
+                                "CustomField4": "{CustomField4}",
+                                "CustomField5": "{CustomField5}",
+                                "CustomField6": "{CustomField6}",
+                                "CustomField7": "{CustomField7}",
+                                "CustomField8": "{CustomField8}",
+                                "CustomField9": "{CustomField9}",
+                                "CustomField10": "{CustomField10}",
+                                "Culture": "{Culture}",
+                                "ManagerId": "{ManagerId}",
+                                "ManagerName": "{ManagerName}",
+                                "EnableTextNotification": "{EnableTextNotification}",
+                                "Website": "{Website}",
+                                "Twitter": "{Twitter}",
+                                "ExpirationDate": "{ExpirationDate}",
+                                "JobRole": "{JobRole}",
+                                "ExternalEmployeeId": "{ExternalEmployeeId}",
+                                "ProfileType": "{ProfileType}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "LastLogin",
+                            "LoginKey",
+                            "OriginalId",
+                            "CreatedDate"
+                        ],
+                        "resource_mandatory": [
+                            "Id"
+                        ]
+                    },
+                    "usersDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{Id}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -26,7 +193,52 @@
                     "Active": "string*",
                     "Email": "string*",
                     "AccessLevel": "string*",
-                    "Brand": "string*"
+                    "Brand": "string*",
+                    "DisableMessages": "boolean",
+                    "Skype": "string",
+                    "PhoneWork": "string",
+                    "PhoneMobile": "string",
+                    "LastLogin": "string",
+                    "LoginKey": "string",
+                    "IsCustomUsername*": "boolean",
+                    "Password": "string",
+                    "SkipFirstLogin": "boolean",
+                    "TimeZone": "string",
+                    "SalesforceId": "string",
+                    "OriginalId": "string",
+                    "Street1": "string",
+                    "Street2": "string",
+                    "City": "string",
+                    "State": "string",
+                    "PostalCode": "string",
+                    "Country": "string",
+                    "SalesforceContactId": "string",
+                    "SalesforceAccountId": "string",
+                    "CreatedDate": "string",
+                    "Points": "string",
+                    "CompanyName": "string",
+                    "JobTitle": "string",
+                    "CustomField1": "string",
+                    "CustomField2": "string",
+                    "CustomField3": "string",
+                    "CustomField4": "string",
+                    "CustomField5": "string",
+                    "CustomField6": "string",
+                    "CustomField7": "string",
+                    "CustomField8": "string",
+                    "CustomField9": "string",
+                    "CustomField10": "string",
+                    "Culture": "string",
+                    "ManagerId": "string",
+                    "ManagerName": "string",
+                    "EnableTextNotification": "boolean",
+                    "Website": "string",
+                    "Twitter": "string",
+                    "ExpirationDate": "string",
+                    "JobRole": "string",
+                    "ExternalEmployeeId": "string",
+                    "ProfileType": "string",
+                    "SendMessage": "boolean"
                 }
             },
             "achievements": {
@@ -63,7 +275,7 @@
             },
             "courses": {
                 "operations": {
-                    "courses_get": {
+                    "coursesList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -73,6 +285,18 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "coursesDelete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/course/{Id}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -98,7 +322,7 @@
             },
             "teams": {
                 "operations": {
-                    "teams_get": {
+                    "teamsList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -108,6 +332,49 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "teamsCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams"
+                        },
+                        "body":{
+                            "Team": {
+                                "Name": "{Name}",
+                                "Description": "{Description}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "Id"
+                        ],
+                        "resource_mandatory": [
+                            "Name"
+                        ]
+                    },
+                    "teams_SubCreate": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{ParentTeamId}/teams"
+                        },
+                        "body":{
+                            "Team": {
+                                "Name": "{Name}",
+                                "Description": "{Description}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "Id"
+                        ],
+                        "resource_mandatory": [
+                            "Name",
+                            "ParentTeamId"
+                        ]
                     }
                 },
                 "parameters": {},
@@ -121,7 +388,7 @@
             },
             "teams_users": {
                 "operations": {
-                    "teams_users_get": {
+                    "teams_usersList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -136,6 +403,49 @@
                             "output_field": null
                         },
                         "query_parameters": {}
+                    },
+                    "teams_usersAdd": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/users"
+                        },
+                        "body":{
+                            "User": {
+                                "Id": "{Id}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
+                    },
+                    "teams_usersRemove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v1.svc/teams/{team_id}/users/{Id}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "mandatory",
+                        "resource_mandatory": [
+                            "Id",
+                            "team_id"
+                        ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "teams_usersAdd",
+                    "remove_operation": "teams_usersRemove",
+                    "member_table": "teams_users",
+                    "group_table": "teams",
+                    "member_attributes": {
+                        "Id": "Id"
+                    },
+                    "group_attributes": {
+                        "Id": "team_id"
                     }
                 },
                 "parameters": {},
