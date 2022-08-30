@@ -705,6 +705,16 @@
             },
             "authentication": "aeries",
             "call_handling": "generic",
+            "maxCallsPerMinute": 100,
+            "retry": [
+                {
+                    "type": "statusCode",
+                    "statusCode": 503,
+                },
+                {
+                    "type": "connectionError"
+                }
+            ],
             "test_connection": {
                 "url": "/v1.svc/users/paginated?limit=1&start=0"
             },
