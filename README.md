@@ -1,5 +1,7 @@
 # SAP Litmos
 
+Read the [SAP Litmos integration documentation](https://docs.nimsuite.com/en/integrations/sap-litmos) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-SAP-Litmos/assets/24281600/8d5e206f-de7d-4030-94cb-b95a6b796692" width="256px" />
 
 ## Data Tables
